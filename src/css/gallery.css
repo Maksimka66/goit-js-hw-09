@@ -14,9 +14,15 @@ p:last-child {
 }
 
 ul {
-  margin: 0;
-  padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1440px;
+  column-gap: 24px;
+  row-gap: 24px;
+  padding: 100px 156px;
+  justify-content: center;
+  margin: auto;
 }
 
 a {
@@ -30,6 +36,6 @@ button {
 
 img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 360px;
+  height: 200px;
 }

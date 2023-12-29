@@ -1,7 +1,8 @@
-// Описаний в документації
-import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
+// Описаний в документації
+import SimpleLightbox from 'simplelightbox';
 
 // Зображення
 const images = [
@@ -70,7 +71,8 @@ const images = [
   },
 ];
 
-const listOfImg = document.querySelector('.images');
+// Створення  галереї
+const listOfImg = document.querySelector('.gallery');
 
 const createLiForUl = array => {
   let result = [];
@@ -91,3 +93,9 @@ const createLiForUl = array => {
 };
 
 listOfImg.innerHTML = createLiForUl(images);
+
+let lightbox = new SimpleLightbox('.gallery-item a', {
+  captionDelay: 250,
+  captionsData: 'alt',
+  animationSpeed: 250,
+});
