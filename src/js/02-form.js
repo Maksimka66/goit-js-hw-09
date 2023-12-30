@@ -7,13 +7,6 @@ const dataItems = {
   message: '',
 };
 
-const filledForm = localStorage.getItem('feedback-form-state');
-
-if (filledForm !== '') {
-  dataItems.email = emailInput.value;
-  dataItems.message = messageArea.value;
-}
-
 formItem.addEventListener('input', event => {
   event.preventDefault();
   dataItems.email = emailInput.value;
@@ -21,9 +14,17 @@ formItem.addEventListener('input', event => {
   localStorage.setItem('feedback-form-state', JSON.stringify(dataItems));
 });
 
+const filledForm = localStorage.getItem('feedback-form-state');
+
+if (filledForm !== null) {
+  const parsedForm = JSON.parse(filledForm);
+  emailInput.value = parsedForm.email;
+  messageArea.value = parsedForm.message;
+}
+
 formItem.addEventListener('submit', event => {
   event.preventDefault();
   console.log(dataItems);
+  localStorage.clear();
   formItem.reset();
-  localStorage.removeItem('feedback-form-state');
 });
