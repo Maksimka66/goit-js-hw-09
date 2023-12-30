@@ -22,6 +22,10 @@ input {
   padding: 8px 16px;
 }
 
+input:hover {
+  border: 1px solid #000;
+}
+
 textarea {
   display: block;
   resize: none;
@@ -30,6 +34,10 @@ textarea {
   border-radius: 4px;
   border: 1px solid #808080;
   padding: 8px 16px;
+}
+
+textarea:hover {
+  border: 1px solid #000;
 }
 
 button {
