@@ -16,11 +16,14 @@ formItem.addEventListener('input', event => {
 
 const filledForm = localStorage.getItem('feedback-form-state');
 
-if (filledForm !== null) {
-  const parsedForm = JSON.parse(filledForm);
-  emailInput.value = parsedForm.email;
-  messageArea.value = parsedForm.message;
-}
+window.addEventListener('beforeunload', event => {
+  event.preventDefault();
+  if (filledForm !== null) {
+    const parsedForm = JSON.parse(filledForm);
+    emailInput.value = parsedForm.email;
+    messageArea.value = parsedForm.message;
+  }
+});
 
 formItem.addEventListener('submit', event => {
   event.preventDefault();
