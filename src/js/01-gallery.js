@@ -75,21 +75,20 @@ const images = [
 const listOfImg = document.querySelector('.gallery');
 
 const createLiForUl = array => {
-  let result = [];
-  for (const elem of array) {
-    result.push(
-      `<li class="gallery-item">
-      <a class="gallery-link" href="${elem.original}">
+  return array
+    .map(
+      ({ original, preview, description }) =>
+        `<li class="gallery-item">
+      <a class="gallery-link" href="${original}">
         <img 
           class="gallery-image"
-          src="${elem.preview}"
-          alt="${elem.description}"
+          src="${preview}"
+          alt="${description}"
         /> 
       </a>
     </li>`
-    );
-  }
-  return result.join('');
+    )
+    .join('');
 };
 
 listOfImg.innerHTML = createLiForUl(images);
