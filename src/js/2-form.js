@@ -9,8 +9,8 @@ const dataItems = {
 
 formItem.addEventListener('input', event => {
   event.preventDefault();
-  dataItems.email = emailInput.value;
-  dataItems.message = messageArea.value;
+  dataItems.email = emailInput.value.trim();
+  dataItems.message = messageArea.value.trim();
   localStorage.setItem('feedback-form-state', JSON.stringify(dataItems));
 });
 
@@ -24,6 +24,9 @@ if (filledForm !== null) {
 
 formItem.addEventListener('submit', event => {
   event.preventDefault();
+  if (emailInput.value === '' || messageArea.value === '') {
+    return;
+  }
   console.log(dataItems);
   localStorage.clear();
   formItem.reset();
