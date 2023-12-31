@@ -93,8 +93,7 @@ const createLiForUl = array => {
 
 listOfImg.innerHTML = createLiForUl(images);
 
-let lightbox = new SimpleLightbox('.gallery-item a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
   captionsData: 'alt',
-  animationSpeed: 250,
 });
