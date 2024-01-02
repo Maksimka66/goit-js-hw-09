@@ -74,7 +74,7 @@ const images = [
 // Створення  галереї
 const listOfImg = document.querySelector('.gallery');
 
-const createLiForUl = array => {
+const generateGalleryMarkup = array => {
   return array
     .map(
       ({ original, preview, description }) =>
@@ -91,7 +91,7 @@ const createLiForUl = array => {
     .join('');
 };
 
-listOfImg.innerHTML = createLiForUl(images);
+listOfImg.innerHTML = generateGalleryMarkup(images);
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
