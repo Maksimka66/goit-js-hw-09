@@ -34,6 +34,8 @@ formItem.addEventListener('submit', event => {
     email: formItem.elements.email.value.trim(),
     message: formItem.elements.message.value.trim(),
   };
+  dataItems.email = '';
+  dataItems.message = '';
   console.log(resultData);
   localStorage.removeItem('feedback-form-state');
   event.currentTarget.reset();
