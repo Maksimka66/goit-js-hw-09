@@ -1,0 +1,1 @@
+h1,h2,h3,h4,h5,h6,p{margin:0}p:last-child{margin-bottom:0}ul{list-style:none;display:flex;flex-wrap:wrap;width:1440px;column-gap:24px;row-gap:24px;justify-content:center;margin:auto}a{color:currentColor;text-decoration:none}button{cursor:pointer}img{display:block;width:360px;height:200px}
